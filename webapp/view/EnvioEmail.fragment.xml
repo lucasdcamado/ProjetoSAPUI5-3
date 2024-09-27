@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog id="dialogEmail" title="Enviar Email" type="Message" draggable="true" titleAlignment="Center">
+      <content>
+        <Text text="A cotação selecionada será enviada ao fornecedor, confirmar envio?" textAlign="Center"/>
+      </content>
+      <beginButton>
+        <Button id="btnEnviar1" text="Enviar" press=".getData" type="Emphasized"/>
+      </beginButton>
+
+      <endButton>
+        <Button id="btnRetornar2" text="Voltar" press="voltarEmail" type="Emphasized"/>
+      </endButton>
+      
+  </Dialog>
+</core:FragmentDefinition>

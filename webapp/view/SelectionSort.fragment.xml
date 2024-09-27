@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="SelectionItemDialog"
+		confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem id="ItemDlgSubmi"   text="RFQ"              key="Submi" selected="true" />
+			<ViewSettingsItem id="ItemDlgLifnr"   text="Fornecedor"       key="Lifnr" />
+            <ViewSettingsItem id="ItemDlgEbeln"   text="Nº Cotação"       key="Ebeln" />
+            <ViewSettingsItem id="ItemDlgEbelp"   text="Item"             key="Ebelp" />
+            <ViewSettingsItem id="ItemDlgWerks"   text="Centro"           key="Werks" />
+            <ViewSettingsItem id="ItemDlgName1"   text="Nome"             key="Name1" />
+			<ViewSettingsItem id="ItemDlgMatnr"   text="Material"         key="Matnr" />
+            <ViewSettingsItem id="ItemDlgKtmng"   text="Qtd - Pedido"     key="Ktmng" />
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

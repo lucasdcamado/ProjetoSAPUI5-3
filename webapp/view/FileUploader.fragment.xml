@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:upload="sap.m.upload">
+  <Dialog id="dialogFileUpload" title="Importar Cotação" type="Message" draggable="true">
+      <content>
+          <upload:UploadSet id="attachmentUpl" instantUpload="false" maxFileSize="2" noDataDescription="" noDataText="" selectionChanged="onSelectionChangeAttachment" uploadCompleted="onUploadCompleted" uploadUrl="/sap/opu/odata/SAP/ZMM_MAPA_COTACAO_SRV/ArquivoSet" visible="true">
+                <upload:toolbar>
+                    <OverflowToolbar id="ToolBar1">
+                        <Text text="Importe o arquivo Excel com a cotação atualizada pelo fornecedor."/>
+                        <ToolbarSpacer id="toolbarspacer1" />
+                    </OverflowToolbar>
+                </upload:toolbar>
+
+          </upload:UploadSet>
+            <OverflowToolbar id="ToolBar2">
+              <ToolbarSpacer id="toolbarspacer2" />
+              <Text text="Os dados da cotação atualizados serão exibidos no programa 'Lista de cotações registradas'."/>
+            </OverflowToolbar>
+      </content>
+
+      <beginButton>
+        <Button id="btnConfirm" text="Confirmar" press=".onStartUpload" type="Emphasized"/>
+      </beginButton>
+
+      <endButton>
+        <Button id="btnBack" text="Voltar" press=".voltar" type="Emphasized"/>
+      </endButton>
+      
+  </Dialog>
+</core:FragmentDefinition>

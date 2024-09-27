@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		id="DialogLifnr"
+		noDataText="Nenhuma Cotação Encontrada."
+		title="Dados Fornecedores"
+		cancel=".CloseDialog"
+		search="null"
+		items="{ path : '/FornecedoresSet' }"
+        contentWidth="30%">
+        
+		<ColumnListItem vAlign="Middle" type="Active" press="onFornecedorPress">
+			<cells>
+				<Text text="{Submi}"/>
+                <Text text="{Lifnr}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="2em">
+				<header>
+					<Text text="RFQ Coletiva"/>
+				</header>
+			</Column>
+            <Column width="2em">
+				<header>
+					<Text text="Fornecedor" />
+				</header>
+			</Column>  
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

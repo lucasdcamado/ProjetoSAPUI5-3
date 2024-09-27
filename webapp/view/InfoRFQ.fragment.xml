@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		id="DialogRFQ"
+		noDataText="Nenhuma RFQ encontrada."
+		title="Selecione a RFQ Coletiva"
+		search="null"
+		confirm=".ConfirmRFQ"
+		cancel=".ConfirmRFQ"
+		items="{ path : '/BuscaRFQSet' }"
+
+        contentWidth="5em">
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<ObjectIdentifier title="{RFQ. Coletiva}" text="{Submi}" />
+				<Text text="{Submi}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="5em">
+				<header>
+					<Text text="RFQ Coletiva" />
+				</header>
+			</Column> 
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

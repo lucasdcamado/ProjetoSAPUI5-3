@@ -1,0 +1,28 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core">
+    <TableSelectDialog
+		id="DialogForn"
+		noDataText="Nenhum fornecedor encontrado."
+		title="Selecione o fornecedor"
+		search="null"
+		confirm=".ConfirmForn"
+		cancel=".ConfirmForn"
+		items="{ path : '/BuscaFornecedorSet'}"
+		
+        contentWidth="5em">
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<ObjectIdentifier title="{Fornecedor}" text="{Lifnr}" />
+				<Text text="{Lifnr}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="5em">
+				<header>
+					<Text text="Fornecedores" />
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

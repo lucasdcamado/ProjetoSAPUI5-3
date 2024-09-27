@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		id="DialogCotacoes"
+		noDataText="Nenhuma Cotação Encontrada."
+		title="Cotações Enviadas"
+		cancel=".CloseDialog"
+		search="null"
+		items="{ path : '/BuscaCotacaoSet' }">
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<Text text="{Submi}"/>
+                <Text text="{Ebeln}"/>
+                <Text text="{Lifnr}"/>
+                <Text text="{Name1}" maxLines="1"/>
+                <Text text="{Bukrs}"/>
+                <Text text="{Ekorg}"/>
+                <Text text="{Ekgrp}"/>
+                <Text text="{Bedat}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="5em">
+				<header>
+					<Text text="RFQ Coletiva" maxLines="1"/>
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Nº Cotação" />
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Fornecedor" />
+				</header>
+			</Column>
+            <Column width="7em">
+				<header>
+					<Text text="Nome" />
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Nº Empresa" />
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Org. de Compras" />
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Grupo de Compradores" />
+				</header>
+			</Column>
+            <Column width="5em">
+				<header>
+					<Text text="Data do Pedido" />
+				</header>
+			</Column>    
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

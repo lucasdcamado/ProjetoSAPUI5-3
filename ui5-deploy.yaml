@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zmm.sap.zmm002
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://s4-dev.bsabioenergia.com.br/
+          client: "100"
+        app:
+          name: ZMM002
+          description: Deployment Inicial
+          package: ZDEV
+          transport: S4DK904437
+        exclude:
+          - /test/

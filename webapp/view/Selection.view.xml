@@ -1,0 +1,137 @@
+<mvc:View 
+    xmlns:smartmultiedit="sap.ui.comp.smartmultiedit" 
+    controllerName="zmm.sap.zmm002.controller.Selection"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    height="100%">
+    <Page id="selection" title="BSA | Bom Sucesso Agroindústria - Lista de Cotações">
+        <content>
+
+            <Panel headerText="Critérios de Seleção" expandable="true" expanded="true">
+
+                <l:SimpleForm id="form">
+
+                            <Label text="Número RFQ Coletiva" design="Bold" required="true"/>
+                            <Input id="inputRFQ" placeholder="Número RFQ Coletiva" required="true" width="300px" showValueHelp="true" valueHelpRequest="onInfoRFQ"/>
+
+                            <Label text="Fornecedor" design="Bold" />
+                            <Input id="inputFornecedor" placeholder="Fornecedor" showValueHelp="true" valueHelpRequest="onInfoForn" width="300px"/>
+           
+                            <Label text="Organização de Compra" design="Bold" />
+                            <Input id="inputOrg" placeholder="Organização de Compra" showValueHelp="true" valueHelpRequest="Help4" width="300px"/>
+
+                            <Label text="Grupo de Compradores" design="Bold" />
+                            <Input id="inputGrupo" placeholder="Grupo de Compradores" showValueHelp="true" valueHelpRequest="Help3" width="300px"/>
+                           
+                            <Label text="Tipo de Documento" design="Bold" />
+                            <Input id="inputDoc" placeholder="Tipo de Documento" showValueHelp="true" valueHelpRequest="Help2" width="300px" />
+            
+                            <Label text="Data do Documento" design="Bold" />
+                            <DatePicker id="datePickerDocumento" placeholder="Data do Documento" change="onInputChange" width="300px" />
+                        
+                            <Label text="Empresa" design="Bold" />
+                            <Input id="inputEmpresa" placeholder="Empresa" required="true" width="300px" showValueHelp="true" valueHelpRequest="Help1"/>
+
+                </l:SimpleForm>
+
+                         <HBox justifyContent="Center" width="100%">
+                            <Button icon="sap-icon://search" text="Buscar Cotações" press="onSearch" width="250px" type="Emphasized" tooltip="Clique para buscar as cotações"/>
+                            <Button icon="sap-icon://clear-filter" press="onClear" type="Transparent" tooltip="Clique para limpar os campos"/>
+                        </HBox>
+
+            </Panel>  
+        </content>
+
+        <content>
+                <Toolbar design="Info" style="Standard">
+                <ToolbarSpacer ></ToolbarSpacer>
+				<Label text="Lista de Cotações" textAlign="Center" vAlign="Middle"/>
+                 <Button icon="sap-icon://message-information" press="onHelp" type="Transparent" tooltip="Ajuda"/>
+                <ToolbarSpacer ></ToolbarSpacer>
+			</Toolbar>
+
+                <Panel expandable="true" expanded="true">
+                    <Table  id="table"
+                            items = "{ path: '/SolicitacaoSet' }"
+                            noDataText="Nenhum dado encontrado."
+                            mode="MultiSelect"
+                            visible="false">
+                        <columns>
+                            <Column width="7rem">
+                                <Label text="RFQ. Coletiva" />
+                            </Column>
+                            <Column width="7rem">
+                                <Label text="Nº Cotação" />
+                            </Column>
+                            <Column width="4rem">
+                                <Label text="Item" />
+                            </Column>
+                            <Column width="7rem">
+                                <Label text="Fornecedor" />
+                            </Column>
+                            <Column width="18rem">
+                                <Label text="Nome"/>
+                            </Column>
+                            <Column width="20rem">
+                                <Label text="Descrição"/>
+                            </Column>
+                            <Column width="4rem">
+                                <Label text="UN"/>
+                            </Column>
+                            <Column width="6rem">
+                                <Label text="Quantidade"/>
+                            </Column>
+                            <Column width="5rem">
+                                <Label text="Material"/>
+                            </Column>
+                            <Column width="8rem">
+                                <Label text="Data do Pedido" />
+                            </Column>
+                            <Column width="8rem">
+                                <Label text="Data de Remessa"/>
+                            </Column>
+                            <Column width="4rem">
+                                <Label text="Centro" />
+                            </Column>
+                            <Column width="15rem">
+                                <Label text="E-mail de envio"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <Text text="{Submi}"/>
+                                        <Text text="{Ebeln}"/>
+                                        <Text text="{Ebelp}"/>
+                                        <Text text="{Lifnr}"/>
+                                        <Text text="{Name1}"/>
+                                        <Text text="{Txz01}"/>
+                                        <Text text="{Meins}"/>
+                                        <Text text="{ path: 'Ktmng', formatter: '.formatter.formataValMoeda'}"/>
+                                        <Text text="{Matnr}"/>
+                                        <Text text="{ path: 'Bedat', formatter: '.formatter.formataData'}"/>
+                                        <Text text="{ path: 'Eindt', formatter: '.formatter.formataData'}"/>
+                                        <Text text="{Werks}"/>
+                                        <Text text="{SmtpAddr}"/>
+                                    </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>  
+                </Panel>
+        </content>        
+
+                <footer> 
+                    <Toolbar design="Auto">
+                    <content>
+                        <Button text="Ordenar" id="btnSort" tooltip="Ordenar Cotações" icon="sap-icon://increase-line-height" press="handleSortButtonPressed" type="Ghost"/>
+                        <Button text="Cotações Enviadas" press="getCotacoes" icon="sap-icon://approvals" type="Ghost"/>
+                    <ToolbarSpacer />
+                        <Button text="Importar Cotação" press="getImport" type="Emphasized" icon="sap-icon://upload" />
+                        <Button text="Enviar Email" press="getEmail" type="Emphasized" icon="sap-icon://email" />
+                    </content>
+                    </Toolbar>
+                </footer>
+    </Page>
+</mvc:View>
